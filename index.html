@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shri Mahavir Bangle Store</title>
+  <link rel="stylesheet" href="stylebangle.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header with Image and Overlay Text -->
+  <header class="header">
+    <div class="overlay">
+      <h1>Shri Mahavir Bangle Store</h1>
+      <p>Classic Indian Elegance</p>
+    </div>
+  </header>
+  
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+<!-- Cart Toggle Button -->
+<!-- Cart Toggle Button -->
+<button id="cart-toggle" class="cart-toggle">🛒</button>
+<script>
+  document.getElementById('cart-toggle').addEventListener('click', function() {
+    const cart = document.getElementById('cart');
+    cart.classList.toggle('hidden');
+  });
+</script>
+
+<!-- Cart Panel -->
+<div id="cart" class="cart hidden">
+    <h3>Your Cart 🛒</h3>
+    <div id="cart-items"></div>
+    <div id="cart-total">Total: ₹0</div>
+    <button onclick="checkout()" class="checkout-btn">Checkout</button>
+</div>
+  <!-- Slideshow -->
+  <section class="slideshow-container slideshow" id="home">
+    <img src="c:\Users\LENOVO\Desktop\iimb\my website\simg1.jpg" class="slide" alt="Slide 1">
+    <img src="c:\Users\LENOVO\Desktop\iimb\my website\simg2.jpg" class="slide" alt="Slide 2">
+    <img src="c:\Users\LENOVO\Desktop\iimb\my website\simg3.jpg" class="slide" alt="Slide 3">
+    <img src="c:\Users\LENOVO\Desktop\iimb\my website\simg4.jpg" class="slide" alt="Slide 4">
+  </section>
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+  </script>
+
+  <!-- Product Grid -->
+  <section id="shop" class="shop">
+    <h2>Shop Our Collection</h2>
+    <div class="product-grid">
+      <div class="product-card" data-price="499" data-name="Laser Cut Designer Bangles" onclick="addToCart(this)">
+        <img src="c:\Users\LENOVO\Desktop\iimb\my website\img4.jpg" alt="Laser Cut Designer Bangles">
+        <h3>Laser Cut Designer Bangles</h3>
+        <p>Price: ₹499</p>
+        <button onclick="addToCart(this.parentElement)">Add to Cart</button>
+        <button onclick="buyNow(this.parentElement)">Buy Now</button>
+      </div>
+      <div class="product-card" data-price="699" data-name="Micro Gold Plated Bangles" onclick="addToCart(this)">
+        <img src="c:\Users\LENOVO\Desktop\iimb\my website\img2.jpg" alt="Micro Gold Plated Bangles">
+        <h3>Micro Gold Plated Bangles</h3>
+        <p>Price: ₹699</p>
+        <button onclick="addToCart(this.parentElement)">Add to Cart</button>
+        <button onclick="buyNow(this.parentElement)">Buy Now</button>
+      </div>
+      <div class="product-card" data-price="299" data-name="Laser Cut Bangle(set of 2)" onclick="addToCart(this)">
+        <img src="c:\Users\LENOVO\Desktop\iimb\my website\img1.jpg" alt="Laser Cut Bangle(set of 2)">
+        <h3>Laser Cut Bangle(set of 2)</h3>
+        <p>Price: ₹299</p>
+        <button onclick="addToCart(this.parentElement)">Add to Cart</button>
+        <button onclick="buyNow(this.parentElement)">Buy Now</button>
+      </div>
+      <div class="product-card" data-price="549" data-name="Shining diva Bangle (set of 4)" onclick="addToCart(this)">
+        <img src="c:\Users\LENOVO\Desktop\iimb\my website\img3.jpg" alt="Shining diva Bangle (set of 4)">
+        <h3>Shining diva Bangle (set of 4)</h3>
+        <p>Price: ₹549</p>
+        <button onclick="addToCart(this.parentElement)">Add to Cart</button>
+        <button onclick="buyNow(this.parentElement)">Buy Now</button>
+      </div>
+      <div class="product-card" data-price="799" data-name="Butterfly Studded Bangles" onclick="addToCart(this)">
+        <img src="c:\Users\LENOVO\Desktop\iimb\my website\img5.jpg" alt="Butterfly Studded Bangles">
+        <h3>Butterfly Studded Bangles</h3>
+        <p>Price: ₹799</p>
+        <button onclick="addToCart(this.parentElement)">Add to Cart</button>
+        <button onclick="buyNow(this.parentElement)">Buy Now</button>
+      </div>
+      <div class="product-card" data-price="499" data-name="Kundan studded Bangle" onclick="addToCart(this)">
+        <img src="c:\Users\LENOVO\Desktop\iimb\my website\img6.jpg" alt="Kundan studded Bangle">
+        <h3>Kundan studded Bangle</h3>
+        <p>Price: ₹499</p>
+        <button onclick="addToCart(this.parentElement)">Add to Cart</button>
+        <button onclick="buyNow(this.parentElement)">Buy Now</button>
+      </div>
+      <div class="product-card" data-price="749" data-name="Silver stone Bangle" onclick="addToCart(this)">
+        <img src="c:\Users\LENOVO\Desktop\iimb\my website\img7.jpg" alt="Silver stone Bangle">
+        <h3>Silver stone Bangle</h3>
+        <p>Price: ₹749</p>
+        <button onclick="addToCart(this.parentElement)">Add to Cart</button>
+        <button onclick="buyNow(this.parentElement)">Buy Now</button>
+      </div>
+      <div class="product-card" data-price="299" data-name="Diamond studded Bangle" onclick="addToCart(this)">
+        <img src="c:\Users\LENOVO\Desktop\iimb\my website\img8.jpg" alt="Diamond studded Bangle">
+        <h3>Diamond studded Bangle</h3>
+        <p>Price: ₹299</p>
+        <button onclick="addToCart(this.parentElement)">Add to Cart</button>
+        <button onclick="buyNow(this.parentElement)">Buy Now</button>
+      </div>
+      <div class="product-card" data-price="899" data-name="Multi colour Studded Bangle" onclick="addToCart(this)">
+        <img src="c:\Users\LENOVO\Desktop\iimb\my website\img9.jpg" alt="Multi colour Studded Bangle">
+        <h3>Multi colour Studded Bangle</h3>
+        <p>Price: ₹899</p>
+        <button onclick="addToCart(this.parentElement)">Add to Cart</button>
+        <button onclick="buyNow(this.parentElement)">Buy Now</button>
+      </div>
+      <div class="product-card" data-price="999" data-name="Diamond studded Bangle set" onclick="addToCart(this)">
+        <img src="c:\Users\LENOVO\Desktop\iimb\my website\img10.jpg" alt="Diamond studded Bangle set">
+        <h3>Diamond studded Bangle set</h3>
+        <p>Price: ₹999</p>
+        <button onclick="addToCart(this.parentElement)">Add to Cart</button>
+        <button onclick="buyNow(this.parentElement)">Buy Now</button>
+      </div>
+      <div class="product-card" data-price="749" data-name="Rosegold Studded Bangle" onclick="addToCart(this)">
+        <img src="c:\Users\LENOVO\Desktop\iimb\my website\img11.jpg" alt="Rosegold Studded Bangle">
+        <h3>Rosegold Studded Bangle</h3>
+        <p>Price: ₹749</p>
+        <button onclick="addToCart(this.parentElement)">Add to Cart</button>
+        <button onclick="buyNow(this.parentElement)">Buy Now</button>
+      </div>
+      <div class="product-card" data-price="549" data-name="Stone Bangle" onclick="addToCart(this)">
+        <img src="c:\Users\LENOVO\Desktop\iimb\my website\img12.jpg" alt="Stone Bangle">
+        <h3>Stone Bangle</h3>
+        <p>Price: ₹549</p>
+        <button onclick="addToCart(this.parentElement)">Add to Cart</button>
+        <button onclick="buyNow(this.parentElement)">Buy Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>At our store, we celebrate the timeless beauty of Indian bangles. 
+       Our mission is to bring traditional and contemporary designs together to give every woman a unique way to express her style.
+       Whether for weddings or everyday elegance, our handcrafted bangles are made with love and care.</p>
+    <p>Explore our collection and find the perfect piece that resonates with your personality.</p>
+    <p>Join us in celebrating the art of bangles!</p>
+  </section><br><br>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or inquiries, feel free to reach out to us!</p>
+    <p>Email:jainshashank104@gmail.com</p>
+    <p>Phone: +91 07412-234122, +91 91117-30865</p>
+    <p>Address: 47, manak chowk</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Bangle Bazaar. All rights reserved.</p>
+  </footer>
+ here
+  <script src="java.js"></script>
+  <script>
+    function addToCart(productCard) {
+      const productName = productCard.getAttribute('data-name');
+      const productPrice = productCard.getAttribute('data-price');
+      const cartItems = document.getElementById('cart-items');
+      
+      // Add product details to the cart
+      const cartItem = document.createElement('div');
+      cartItem.textContent = `${productName} - ₹${productPrice}`;
+      cartItems.appendChild(cartItem);
+
+      // Update the total price
+      const cartTotal = document.getElementById('cart-total');
+      const currentTotal = parseInt(cartTotal.textContent.replace('Total: ₹', '')) || 0;
+      cartTotal.textContent = `Total: ₹${currentTotal + parseInt(productPrice)}`;
+    }
+  </script>
+</body>
+</html>
+
